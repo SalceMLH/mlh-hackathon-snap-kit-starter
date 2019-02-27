@@ -14,9 +14,25 @@ To get started, create a [Firebase](https://console.firebase.google.com/) and [S
 
 # Getting Started
 
-**Step 1: Creating a Firebase account**
+**Step 1: Configure Firebase in Your App**
 
-**Step 2: Configuring the Snap Kit SDK**
+Open `script.js`, and fill in the Firebase config from earlier. This will give your web app access to the Cloud Firestore.
+
+```
+firebase.initializeApp({
+  /* Fill in the following values based on your config. */
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
+});
+```
+
+**Step 2: Set Up a Web Server**
+
+You’ll need to host your web app with a server in order to leverage the Skap Kit SDK
 
 **Step 3: Configuring the Snap Kit SDK**
 
