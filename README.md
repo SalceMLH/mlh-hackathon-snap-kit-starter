@@ -6,11 +6,19 @@ This is a hackathon boilerplate for a messaging app using the Snap Kit Bitmoji S
 
 This project requires the following tools:
 
-- Firebase - A mobile and web application development platform. Firebase’s Cloud Firestore will store and sync messages between users of your app.
-- Node.js - An open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
-- Snap Kit SDK - Lets hackers like you integrate some of Snapchat's best features across your hacks.
+* Firebase - A mobile and web application development platform. Firebase’s Cloud Firestore will store and sync messages between users of your app.
+* Node.js - An open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
+* Snap Kit SDK - Lets hackers like you integrate some of Snapchat's best features across your hacks.
+
+To get started, create a [Firebase](https://console.firebase.google.com/) and [Snap kit](https://kit.snapchat.com/) account if you haven't already, you can use your Snapchat credentials if you have one to log into Snap Kit. 
 
 # Getting Started
 
-**Step 1: Configuring your SnapKit SDK**
+**Step 1: Creating a Firebase account**
+
+**Step 2: Configuring the Snap Kit SDK**
+
+# Getting Started
+
+
 
