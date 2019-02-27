@@ -18,7 +18,11 @@ To get started, create a [Firebase](https://console.firebase.google.com/) and [S
 
 **Step 2: Configuring the Snap Kit SDK**
 
-# Getting Started
+**Step 3: Configuring the Snap Kit SDK**
+
+**Step 4: Configuring the Snap Kit SDK**
+
+
 
 
 
