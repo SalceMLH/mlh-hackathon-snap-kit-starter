@@ -74,7 +74,7 @@ Open `index.html`, and add a `<div>` placeholder where our sticker picker would 
 ```
 With our Sticker Picker in place, let's include the Snap Kit SDK using the following snippet
 
-'''javascript
+```javascript
 <script>
   // Load the SDK asynchronously
   (function (d, s, id) {
