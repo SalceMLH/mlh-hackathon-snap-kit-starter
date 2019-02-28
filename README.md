@@ -18,7 +18,7 @@ To get started, create a [Firebase](https://console.firebase.google.com/) and [S
 
 Open `script.js`, and fill in the Firebase config from earlier. This will give your web app access to the Cloud Firestore.
 
-```
+```javascript
 firebase.initializeApp({
   /* Fill in the following values based on your config. */
   apiKey: "",
@@ -63,15 +63,33 @@ Before working with the Snap Kit Development Kit, you'll need to get your Snap K
 
 Now that we have configured all the starting steps to our application, we can now add the Bitmoji Kit to our application. We will be adding the Bitmoji Icon to our messaging bar. 
 
-Open `index.html`, and add a placeholder `<div>` where our sticker picker would go
+Open `index.html`, and add a `<div>` placeholder where our sticker picker would go
 
-```
+```html
 <div class="controls">
   <input id="messageInput" type="text" placeholder="Type a message..."/>
   <i id="namePicker" class="material-icons">account_box</i>
   <div class="bitmojiStickerPicker"></div>
 </div>
 ```
+With our Sticker Picker in place, let's include the Snap Kit SDK using the following snippet
+
+'''javascript
+<script>
+  // Load the SDK asynchronously
+  (function (d, s, id) {
+    var js, sjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://sdk.snapkit.com/js/v1/login_bitmoji.js";
+    sjs.parentNode.insertBefore(js, sjs);
+  }(document, 'script', 'bitmojikit-sdk'));
+</script>
+```
+
+Copy and paste the snippet to the end of the `<body>` tag of `index.html` as shown.
+
+
 
 # What's Included?
 
