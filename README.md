@@ -14,7 +14,7 @@ To get started, create a [Firebase](https://console.firebase.google.com/) and [S
 
 # Getting Started
 
-**Step 1: Configure Firebase in Your App**
+### Step 1: Configure Firebase in Your App**
 
 Open `script.js`, and fill in the Firebase config from earlier. This will give your web app access to the Cloud Firestore.
 
@@ -30,7 +30,7 @@ firebase.initializeApp({
 });
 ```
 
-**Step 2: Set Up a Web Server**
+### Step 2: Set Up a Web Server**
 
 You’ll need to host your web app with a server in order to leverage the Skap Kit SDK. Open your terminal, and run the following command. Do keep in mind that [Node.js](https://nodejs.org/en/download/) is required to run the `http-server` command. 
 
@@ -49,7 +49,7 @@ $ http-server
 Open http://localhost:8080 to view it in your browser.
 
 
-**Step 3: Configuring the Snap Kit SDK**
+### Step 3: Configuring the Snap Kit SDK**
 
 Before working with the Snap Kit Development Kit, you'll need to get your Snap Kit credentials. Navigate to the [Snap Kit Development Portal](https://tinyurl.com/y738hmag) and Create an account. Alternatively, you can login using your Snapchat account.
 
@@ -58,7 +58,7 @@ Before working with the Snap Kit Development Kit, you'll need to get your Snap K
 3. Add a redirect URL which is your localhost URL `http://localhost:8081/`
 4. Configure your development environment by toggling the `web` client on.
 
-**Step 4: Adding Bitmoji Kit to your app**
+### Step 4: Adding Bitmoji Kit to your app**
 
 
 Now that we have configured all the starting steps to our application, we can now add the Bitmoji Kit to our application. We will be adding the Bitmoji Icon to our messaging bar. 
@@ -89,6 +89,113 @@ With our Sticker Picker in place, let's include the Snap Kit SDK using the follo
 
 Copy and paste the snippet to the end of the `<body>` tag of `index.html` as shown.
 
+```javascript
+<!-- JS -->
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script src="script.js"></script>
+<script>
+  /* Load the Bitmoji Kit SDK asynchronously */
+  (function (d, s, id) {
+    var js, sjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://sdk.snapkit.com/js/v1/login_bitmoji.js";
+    sjs.parentNode.insertBefore(js, sjs);
+  }(document, 'script', 'bitmojikit-sdk'));
+</script>
+```
+
+Open the `script.js` file to add the `snapKitInit` function beneath the comment that reads `/* Setup Bitmoji Kit Web here */`
+
+```
+window.snapKitInit = () => {
+  
+};
+```
+
+The `snapKitInit` function will initialize the Snap Kit SDK once it's fully loaded.
+
+Let's add a line of code to the initializer that will call the Bitmoji Sticker Picker. 
+
+```javascript
+window.snapKitInit = () => {
+    snap.bitmojikit.mountBitmojiStickerPickerIcons();
+};
+```
+
+The `mountBitmojiStickerPickerIcons` function will load the Bitmoji Sticker Picker once intialized by the `snapKitInit` function. The functions takes in the following three (3) arguments.
+
+* `bitmojiWebPickerIconClass`(string): the class name of the sticker picker placeholder
+
+* `uiOptions` (object): specifies options for the sticker picker
+* `loginParamsObj` (object): specifies login and authentication information
+
+Declare the class for the `bitmojiWebPickerIconClass` function to `bitmojiStickerPicker`. Let’s add that to our function call.
+
+```javascript
+/* Setup Bitmoji Kit Web here */
+window.snapKitInit = () => {
+  const bitmojiWebPickerIconClass = "bitmojiStickerPicker";
+  
+  snap.bitmojikit.mountBitmojiStickerPickerIcons(
+    bitmojiWebPickerIconClass
+  );
+}
+```
+
+Declare the class for the `uiOptions` object to specify the options for the sticker picker. This object has two keys:
+
+* `onStickerPickCallback`: Function will take in the Bitmoji image URL as an argument and will be called by the Bitmoji Kit when the user selects a Bitmoji
+* `webpickerPosition`: The position of the sticker picker
+
+```javascript
+/* Setup Bitmoji Kit Web here */
+window.snapKitInit = () => {
+  const bitmojiWebPickerIconClass = "bitmojiStickerPicker";
+  const uiOptions = {
+    onStickerPickCallback: sendImage,
+    webpickerPosition: "topLeft",
+  };
+  
+  snap.bitmojikit.mountBitmojiStickerPickerIcons(
+    bitmojiWebPickerIconClass,
+    uiOptions
+  );
+}
+```
+
+Declare the class for the `loginParamsObj` object to allow users to log in and authenticate themselves. This object has three keys:
+
+* `clientId`: A OAuth key that identifies your application.
+* `redirectURI`: A string that is the linked to your web app.
+* `scopeList`: An array that describes what we want to access.
+
+```javascript
+/* Setup Bitmoji Kit Web here */
+window.snapKitInit = () => {
+  const bitmojiWebPickerIconClass = "bitmojiStickerPicker";
+  const uiOptions = {
+    onStickerPickCallback: sendImage,
+    webpickerPosition: "topLeft",
+  };
+  const loginParamsObj = {
+    clientId: /* your client id here: */ "",
+    redirectURI: "http://localhost:8081/",
+    scopeList: [
+       "user.bitmoji.avatar",
+       "user.display_name",
+    ]
+  };
+  
+snap.bitmojikit.mountBitmojiStickerPickerIcons(
+    bitmojiWebPickerIconClass,
+    uiOptions,
+    loginParamsObj
+  );
+}
+```
+
+You have now completed calling adding the Bitmoji Sticker Picker. Save your file, refresh the page, and you should see a sweet sticker picker!
 
 
 # What's Included?
