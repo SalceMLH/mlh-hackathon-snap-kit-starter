@@ -210,4 +210,4 @@ We enforce a Code of Conduct for all maintainers and contributors of this Guide.
 
 # License
 
-The Hackathon Starter Kit is open source software [licensed as MIT](https://github.com/MLH/github-hackathon-starter/blob/master/LICENSE.md).
+The Hackathon Starter Kit is open source software [licensed as MIT](https://github.com/SalceMLH/mlh-hackathon-snap-kit-starter/blob/master/LICENSE).
