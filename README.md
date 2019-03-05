@@ -44,7 +44,7 @@ Once installed navigate to the folder that holds the sample project files and us
 $ http-server
 ```
 
-`http-server` will output a link to our server which in this case `http://127.0.0.1:8080`. The server address is equivalent to `localhost` so moving forward we will utilize the latter. Enter the following URL into your browser (be sure to replace the port number with the number provided by `http-server`)
+`http-server` will output a link to our server which in this case `http://127.0.0.1:8080`. The server address is equivalent to `localhost` so moving forward we will utilize the latter. Enter the following URL into your browser _be sure to replace the port number with the number provided by `http-server`)_
 
 Open http://localhost:8080 to view it in your browser.
 
@@ -199,6 +199,10 @@ You have now completed calling adding the Bitmoji Sticker Picker. Save your file
 
 
 # What's Included?
+* [Firebase](https://firebase.google.com/) - A mobile and web application development platform. Firebase’s Cloud Firestore will store and sync messages between users of your app.
+* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
+* [Snap Kit SDK](https://kit.snapchat.com/) - Lets hackers like you integrate some of Snapchat's best features across your hacks.
+* [Google Fonts](https://developers.google.com/fonts/docs/getting_started) - Google Fonts API to add fonts to your web pages
 
 # Code of Conduct
 
