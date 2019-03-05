@@ -14,7 +14,16 @@ To get started, create a [Firebase](https://console.firebase.google.com/) and [S
 
 # Getting Started
 
-### Step 1: Configure Firebase in Your App**
+### Step 1: Download or Clone the Github folder to your local directory
+
+You can download the boiler plate code by selecting ***Download or Clone*** in at the top of this page or clone the folder into a fresh folder by entering the following command
+
+```
+$ git clone https://github.com/SalceMLH/mlh-hackathon-snap-kit-starter.git
+$ cd mlh-hackathon-snap-kit-starter
+```
+
+### Step 2: Configure Firebase in Your App**
 
 Open `script.js`, and fill in the Firebase config from earlier. This will give your web app access to the Cloud Firestore.
 
@@ -30,7 +39,7 @@ firebase.initializeApp({
 });
 ```
 
-### Step 2: Set Up a Web Server**
+### Step 3: Set Up a Web Server**
 
 You’ll need to host your web app with a server in order to leverage the Skap Kit SDK. Open your terminal, and run the following command. Do keep in mind that [Node.js](https://nodejs.org/en/download/) is required to run the `http-server` command. 
 
@@ -49,7 +58,7 @@ $ http-server
 Open http://localhost:8080 to view it in your browser.
 
 
-### Step 3: Configuring the Snap Kit SDK**
+### Step 4: Configuring the Snap Kit SDK**
 
 Before working with the Snap Kit Development Kit, you'll need to get your Snap Kit credentials. Navigate to the [Snap Kit Development Portal](https://tinyurl.com/y738hmag) and Create an account. Alternatively, you can login using your Snapchat account.
 
@@ -58,7 +67,7 @@ Before working with the Snap Kit Development Kit, you'll need to get your Snap K
 3. Add a redirect URL which is your localhost URL `http://localhost:8081/`
 4. Configure your development environment by toggling the `web` client on.
 
-### Step 4: Adding Bitmoji Kit to your app**
+### Step 5: Adding Bitmoji Kit to your app**
 
 
 Now that we have configured all the starting steps to our application, we can now add the Bitmoji Kit to our application. We will be adding the Bitmoji Icon to our messaging bar. 
