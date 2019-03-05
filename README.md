@@ -206,7 +206,7 @@ You have now completed calling adding the Bitmoji Sticker Picker. Save your file
 
 # Code of Conduct
 
-We enforce a Code of Conduct for all maintainers and contributors of this Guide. Read more in [CONDUCT.md](https://github.com/MLH/mlh-hackathon-flask-starter/blob/master/docs/CONDUCT.md).
+We enforce a Code of Conduct for all maintainers and contributors of this Guide. Read more in [CONDUCT.md](https://github.com/SalceMLH/mlh-hackathon-snap-kit-starter/blob/master/CODE%20OF%20CONDUCT).
 
 # License
 
