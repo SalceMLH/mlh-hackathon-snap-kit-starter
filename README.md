@@ -16,7 +16,7 @@ To get started, create a [Firebase](https://console.firebase.google.com/) and [S
 
 ### Step 1: Download or Clone the Github folder to your local directory
 
-You can download the boiler plate code by selecting ***Download or Clone*** in at the top of this page or clone the folder into a fresh folder by entering the following command
+You can download the boiler plate code by selecting ***Download or Clone*** at the top of this page or clone the folder into a fresh folder by entering the following command
 
 ```
 $ git clone https://github.com/SalceMLH/mlh-hackathon-snap-kit-starter.git
@@ -25,7 +25,16 @@ $ cd mlh-hackathon-snap-kit-starter
 
 ### Step 2: Configure Firebase in Your App**
 
-Open `script.js`, and fill in the Firebase config from earlier. This will give your web app access to the Cloud Firestore.
+Firebase’s Cloud Firestore will store and sync messages between users of your app. This will allow your app to send messages in real time between multiple users.
+
+* Create a new Firebase project. Go to the [Firebase console](https://console.firebase.google.com/u/0/) and click “Add a project”  
+
+* Click the `</>` icon to get your Firebase config. Copy your Firebase config and save it somewhere safe, we will be using this later.
+
+* Click on the “Database” link. You’ll then be able to enable Cloud Firestore by clicking “Create database.” A dialog will prompt you about security rules. Select “Start in test mode” to allow all reads and writes. 
+
+
+* Open `script.js`, and fill in the Firebase config from earlier. This will give your web app access to the Cloud Firestore.
 
 ```javascript
 firebase.initializeApp({
@@ -41,7 +50,7 @@ firebase.initializeApp({
 
 ### Step 3: Set Up a Web Server**
 
-You’ll need to host your web app with a server in order to leverage the Skap Kit SDK. Open your terminal, and run the following command. Do keep in mind that [Node.js](https://nodejs.org/en/download/) is required to run the `http-server` command. 
+Now that you have Firebase configured, you’ll need to host your web app with a server in order to leverage the Skap Kit SDK. Open your terminal, and run the following command. Do keep in mind that [Node.js](https://nodejs.org/en/download/) is required to run the `http-server` command. 
 
 ```
 $ npm install http-server -g
